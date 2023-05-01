@@ -15,17 +15,17 @@ import java.io.IOException;
 import java.util.List;
 
 //Class that will help us export from DB TO Excel
-public class ExcelExportUtil {
+public class ExcelExportUtils {
     private XSSFWorkbook workbook;
     private XSSFSheet sheet;
 
     //Data we are going to export to the Excel file
     private List<Customer> customerList;
 
-    //constructor
+    //constructor injection
     //Data coming in will be injected into the class
     //As I instantiate my class, I bring in customer list and create a new-WorkBook
-    public ExcelExportUtil(List<Customer> customerList) {
+    public ExcelExportUtils(List<Customer> customerList) {
         this.customerList = customerList;
         //creating the Object of a new Workbook
         workbook = new XSSFWorkbook();
