@@ -1,9 +1,9 @@
 package com.codewithcaleb.exporttoexcelfilespringdemo.domain;
 
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor //---> Auto-wires methods
 public class CustomerService {
 
-    private CustomerRepository customerRepository;
+    private final CustomerRepository customerRepository;
 
     public List<Customer> exportCustomerToExcel(HttpServletResponse response) throws IOException {
         List<Customer> customers = customerRepository.findAll();
